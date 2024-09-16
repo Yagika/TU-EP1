@@ -1,56 +1,25 @@
-import java.lang.reflect.Array;
+import codedraw.*;
 
 public class Lines {
 
-    /*public static void main(String[] args) {
-        System.out.println("******************");
-        System.out.println("******************");
-        System.out.println("******************");
-        System.out.println("******************");
-        System.out.println("******************");
-        System.out.println("******************");
-        System.out.println("******************");
-        System.out.println("******************");
-        System.out.println("******************");
-    }*/
-    /*public static void main(String[] args) {
-        int n=9;
-        String stern="**";
-        for (int i = 0; i < n; i += 1) {
-            System.out.println(stern);
-            stern+="**";
-        }
-    }*/
-    //Lines – 2. Erweiterung
-/*    public static void main(String[] args) {
-        int n=9;
-        String stern="**";
-        String line="----";
-        for (int i = 0; i < n; i += 1) {
-            if (i % 2==0){
-            System.out.println(stern);
-            stern+="****";
-            }else{
-                System.out.println(line);
-                line+="----";
-            }
-        }
-    }*/
     public static void main(String[] args) {
-        int n=9;
-        String stern="**";
-        String line="----";
-        String [] arr={};
-        for (int i = 0; i < n/2+1; i += 1) {
-            if (i % 2==0){
-                arr[i]=arr[n-i]=(stern);
-                stern+="****";
-            }else{
-                arr[i]=arr[n-i]=(line);
-                line+="----";
-            }
+        CodeDraw cd = new CodeDraw(400, 200);
+        cd.setLineWidth(2);
 
+        cd.setColor(Palette.DARK_TURQUOISE);
+        cd.drawLine(0, 0, 200, 200);
+        cd.drawLine(40, 0, 200, 160);
+        cd.drawLine(80, 0, 200, 120);
+        cd.drawLine(120, 0, 200, 80);
+        cd.drawLine(160, 0, 200, 40);
 
-        }
+        cd.setColor(Palette.DARK_ORANGE);
+        cd.drawLine(400, 0, 200, 200);
+        cd.drawLine(360, 0, 200, 160);
+        cd.drawLine(320, 0, 200, 120);
+        cd.drawLine(280, 0, 200, 80);
+        cd.drawLine(240, 0, 200, 40);
+
+        cd.show();
     }
 }
