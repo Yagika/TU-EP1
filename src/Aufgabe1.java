@@ -5,6 +5,7 @@
 import codedraw.CodeDraw;
 import codedraw.Palette;
 
+
 import java.awt.*;
 
 public class Aufgabe1 {
