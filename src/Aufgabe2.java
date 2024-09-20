@@ -8,25 +8,34 @@ public class Aufgabe2 {
 
     private static char[][] makeOver(char[][] inputArray) {
         // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        char[][] workArray = new char[inputArray.length + 2][inputArray[0].length + 2];
+        char[][] workArray = new char[inputArray.length + 2][];
         for (int i = 0; i < workArray.length; i++) {
-            char[] workarrayhelp = new char[inputArray[i].length + 2];
-            for (int j = 0; j < workarrayhelp.length; j++) {
-                if (i == 0 || i == workArray.length - 1) {
-                    workarrayhelp[j] = '*';
-                }else{
-                    workarrayhelp[0]='*';
-                    workarrayhelp[j+1]=inputArray[i-1][j];
-                    workarrayhelp[workarrayhelp.length-1]='*';
+            if (i == 0 || i == workArray.length - 1) {
+                if (i == 0) {
+                    workArray[i] = new char[inputArray[i].length + 2];
+                } else {
+                    workArray[i] = new char[inputArray[i-2].length + 2];
+                }
+                for (int j = 0; j < workArray[i].length; j++) {
+                    workArray[i][j] = '*';
+                }
+            }else{
+                workArray[i] = new char[inputArray[i-1].length + 2];
+                for (int j = 0; j < workArray[i].length; j++) {
+                    if (j == 0 || j == workArray[i].length - 1) {
+                        workArray[i][j] = '*';
+                    }else{
+                        workArray[i][j] = inputArray[i-1][j-1];
+                    }
                 }
             }
-                workArray[i]=workarrayhelp;
         }
         return workArray; //Zeile kann geändert oder entfernt werden.
     }
 
     private static void change(int[][] workArray) {
         // TODO: Implementieren Sie hier Ihre Lösung für die Methode
+
     }
 
     //Vorgegebene Methode - BITTE NICHT VERÄNDERN!
