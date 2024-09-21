@@ -33,6 +33,7 @@ public class Aufgabe2 {
         return workArray; //Zeile kann geändert oder entfernt werden.
     }
 
+
     private static void change(int[][] workArray) {
         // TODO: Implementieren Sie hier Ihre Lösung für die Methode
 
