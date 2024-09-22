@@ -14,18 +14,18 @@ public class Aufgabe2 {
                 if (i == 0) {
                     workArray[i] = new char[inputArray[i].length + 2];
                 } else {
-                    workArray[i] = new char[inputArray[i-2].length + 2];
+                    workArray[i] = new char[inputArray[i - 2].length + 2];
                 }
                 for (int j = 0; j < workArray[i].length; j++) {
                     workArray[i][j] = '*';
                 }
-            }else{
-                workArray[i] = new char[inputArray[i-1].length + 2];
+            } else {
+                workArray[i] = new char[inputArray[i - 1].length + 2];
                 for (int j = 0; j < workArray[i].length; j++) {
                     if (j == 0 || j == workArray[i].length - 1) {
                         workArray[i][j] = '*';
-                    }else{
-                        workArray[i][j] = inputArray[i-1][j-1];
+                    } else {
+                        workArray[i][j] = inputArray[i - 1][j - 1];
                     }
                 }
             }
@@ -36,7 +36,18 @@ public class Aufgabe2 {
 
     private static void change(int[][] workArray) {
         // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-
+        for (int i = 0; i < workArray.length; i++) {
+            for (int j = 0; j < workArray[i].length; j++) {
+                if (j == 0 && workArray[i][j] < 0) {
+                    if (Math.abs(workArray[i][j]) <= workArray[i].length) {
+                        int[] sliceArray = Arrays.copyOfRange(workArray[i], Math.abs(workArray[i][j]), workArray[i].length);
+                        workArray[i] = sliceArray;
+                    }else {
+                        workArray[i] =new int[0];
+                    }
+                }
+            }
+        }
     }
 
     //Vorgegebene Methode - BITTE NICHT VERÄNDERN!
